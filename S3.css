@@ -115,7 +115,7 @@ body {
     font-size: 3em;
 }
 .banner .content .model{
-    background-image: url(img/Caine.png);
+    background-image: url(Caine.png);
     width: 100%;
     height: 70vh;
     position: absolute;
