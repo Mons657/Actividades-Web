@@ -1,0 +1,128 @@
+@import url('https://fonts.cdnfonts.com/css/ica-rubrik-black');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+body {
+  background-color: black;
+}
+.button {
+  border: 0;
+  background-image: linear-gradient(150deg, #9500ff, rgb(3, 20, 31), #ff0000);
+  border-radius: 8px;
+  color: azure;
+  display: inline-flex; /* El botón solo mide lo que mide su contenido */
+  font-size: 18px;
+  padding: 4px;
+  cursor: pointer;
+  transition: .3s;
+  margin-top: 42%;
+  margin-left: 80%;
+
+  /* SOLUCIÓN: Capas */
+  position: relative; /* Le da superpoderes de posicionamiento */
+  z-index: 10;
+}
+.button span{
+    background-color: black;
+    padding: 16px 24px;
+    border-radius: 6px;
+    transition: .3s;
+}
+.button:hover span{
+    background: transparent;
+}
+.button:active{
+    transform: scale(0.9);
+}
+.banner{
+    margin-left: auto;
+    width: 100%;
+    height: 105vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    background: -webkit-linear-gradient(to right, hsla(207, 72%, 76%, 0.753), hsla(278, 77%, 68%, 0.719)), url(../TADC/T1.jpg);
+    background: linear-gradient(to right, hsla(0, 0%, 0%, 0.925), hsla(0, 96%, 10%, 0.671)), url(..//TADC/T1.jpg); 
+    background-size: cover;
+    background-attachment: fixed;
+}
+.banner .slider{
+    position: absolute;
+    width: 200px;
+    height: 250px;
+    top: 15%;
+    left: calc(50% - 100px);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: autoRun 20s linear infinite;
+    z-index: 2;
+}
+@keyframes autoRun{
+    from{
+        transform: perspective(1700px) rotateX(-16deg) rotateY(0deg);
+    }to{
+        transform: perspective(1700px) rotateX(-16deg) rotateY(360deg);
+    }
+}
+.banner .slider .item{
+    position: absolute;
+    inset: 0 0 0 0;
+    transform: 
+    rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+    translateZ(550px);
+}
+.banner .slider .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/*Otro pedo*/
+.banner .content{
+    position: absolute;
+    bottom: 50;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1400px, 100vw);
+    height: max-content;
+    padding-bottom: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+.banner .content h1{
+    font-family: 'ICA Rubrik';
+    font-size: 16em;
+    line-height: 1em;
+    color: rgb(255, 251, 0);
+    position: absolute;
+}
+.banner .content h1::after{
+    position: relative;
+    inset: 0 0 0 0;
+    content: attr(data-content);
+    z-index: 7;
+    -webkit-text-stroke: 2px hsl(0, 0%, 100%);
+    color: transparent;
+}
+.banner .content .autor{
+    font-family: 'Poppins';
+    color: azure;
+    margin-right: 80%;
+    height: 10vh;
+    z-index: 10;
+}
+.banner .content h2{
+    font-size: 3em;
+}
+.banner .content .model{
+    background-image: url(img/Caine.png);
+    width: 100%;
+    height: 70vh;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    z-index: 1;
+}
