@@ -37,7 +37,7 @@ div.gallery {
 div.gallery-item {
   margin: 5px;
   border: 1px solid #ccc;
-  width: auto;
+  width: 250px;
 }
 
 div.gallery-item:hover {
@@ -46,7 +46,7 @@ div.gallery-item:hover {
 }
 
 div.gallery-item img {
-  width: 300px;
+  width: 250px;
   height: auto;
 }
 
@@ -62,8 +62,8 @@ header{
   width: 100%;
   height: 700px;
   background: #f79898;
-  background: -webkit-linear-gradient(to right, hsla(207, 72%, 76%, 0.753), hsla(278, 77%, 68%, 0.719)), url(../TADC/T4.jpg);  
-  background: linear-gradient(to right, hsla(46, 81%, 65%, 0.753), hsla(0, 70%, 71%, 0.76)), url(../TADC/T4.jpg); 
+  background: -webkit-linear-gradient(to right, hsla(207, 72%, 76%, 0.753), hsla(278, 77%, 68%, 0.719)), url(..T4.jpg);  
+  background: linear-gradient(to right, hsla(46, 81%, 65%, 0.753), hsla(0, 70%, 71%, 0.76)), url(..T4.jpg); 
   background-size: cover;
   background-attachment: fixed;
   position: relative;
@@ -96,53 +96,52 @@ header .textos-header{
   color: #ffffff;
 }
 .hover-galeria{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    transform: scale(0);
-    background: hsla(216, 91%, 27%, 0.7);
-    transition: transform .5s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  transform: scale(0);
+  background: hsla(216, 91%, 27%, 0.7);
+  transition: transform .5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .hover-galeria p{
-    color: #fff;
-    font-size: 20px;
-    width: 100%;
-    height: auto;
-    text-align: center;
+  color: #fff;
+  font-size: 20px;
+  width: 100%;
+  height: auto;
+  text-align: center;
 }
 .img-in:hover .hover-galeria{
-    transform: scale(1);
+  transform: scale(1);
 }
 .img-in{
-    width: 300px;
-    margin-bottom: 100px;
-    height: auto;
-    overflow: hidden;
-    position: relative;
-    cursor: pointer;
-    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+  width: 250px;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
 }
 .imagen-info{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 nav{
-    text-align: right;
-    padding: 30px 50px 0 0;
+  text-align: right;
+  padding: 30px 50px 0 0;
 }
 nav > a{
-    color: #000000;
-    font-weight: 300;
-    text-decoration: none;
-    margin-right: 10px;
+  color: #000000;
+  font-weight: 300;
+  text-decoration: none;
+  margin-right: 10px;
 }
 nav > a:hover{
-    color:rgb(240, 9, 117);
-    text-decoration: underline;
+  color:rgb(240, 9, 117);
+  text-decoration: underline;
 }
