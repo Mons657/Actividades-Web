@@ -1,0 +1,114 @@
+:root{
+    --colorTextos: rgb(216, 49, 250);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'open sans';
+    background: #4568DC;
+    background: -webkit-linear-gradient(to right, hsla(298, 32%, 56%, 0.589), hsla(226, 68%, 57%, 0.582)), url(../TADC/T2.jpg);  
+    background: linear-gradient(to right, hsla(298, 32%, 56%, 0.589), hsla(226, 68%, 57%, 0.582)), url(../TADC/T2.jpg);
+    height: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    text-align: center;
+    font-weight: 700;
+    margin-top: 50px;
+    color: blueviolet;
+}
+form{
+    background-color: #fff;
+    padding: 40px 0;
+    box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+}
+.form{
+    margin: auto;
+}
+form .grupo{
+    position: relative;
+    margin: 45px;
+}
+.CajasL{
+    background: none;
+    color: #6a2ef7;
+    font-size: 18px;
+    padding: 7px 7px 7px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--colorTextos);
+}
+.CajasN{
+    background: none;
+    color: #6a2ef7;
+    font-size: 18px;
+    padding: 7px 7px 7px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--colorTextos);
+}
+input:focus{
+    outline: none;
+    color: #5e5b5d;
+}
+input{
+    font-family: 'roboto';
+    background: #4568DC;
+    background: -webkit-linear-gradient(to right, hsla(298, 32%, 56%, 0.589), hsla(226, 68%, 57%, 0.582));  
+    background: linear-gradient(to right, hsla(298, 32%, 56%, 0.589), hsla(226, 68%, 57%, 0.582));
+    border: none;
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    color: #fff;
+    height: 40px;
+    font-size: 16px;
+}
+.ola{
+    cursor: pointer;
+}
+.text{
+    font-weight: 700;
+    color: blueviolet;
+    position: relative;
+}
+/* Contenedor general de los bloques de opciones (Ahora en fila) */
+.contenedor-opciones {
+    display: flex;
+    flex-direction: row;    /* Cambiado a row para que se pongan uno al lado del otro */
+    flex-wrap: wrap;        /* Si no caben en la pantalla, bajan ordenadamente */
+    justify-content: center; /* Centra horizontalmente todo el grupo de opciones */
+    gap: 20px;              /* Espacio de separación entre cada opción */
+    margin-top: 15px;
+}
+
+/* Bloque individual de input + etiqueta */
+.opcion-inline {
+    display: flex;
+    align-items: center;    /* Centra verticalmente el círculo/cuadrado con el texto */
+}
+
+/* Reset específico para radios y checkboxes */
+.opcion-inline input[type="radio"],
+.opcion-inline input[type="checkbox"] {
+    display: inline-block;
+    width: auto;            /* Quita el 80% de ancho */
+    height: auto;           /* Quita los 40px de alto */
+    margin: 0 8px 0 0;      /* Pequeño espacio a la derecha antes del texto */
+    cursor: pointer;
+}
+
+.opcion-inline label {
+    cursor: pointer;
+    font-family: 'roboto', sans-serif;
+    color: #333;
+    white-space: nowrap;    /* Evita que el texto de la etiqueta se parta en dos líneas */
+}

@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="S5.css">
+        <title>TADC</title>
+    </head>
+    <body>
+        <section class="textos-header">
+            <div class="wave" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"></svg></div>
+            <form action="Recibir.php" method="post" id="Formulario1" name="Contacto">
+                <div align="center" class="form">
+                    <h1>Registro</h1>
+                    <div class="grupo">
+                        <span class="Etiquetas" style="color: blueviolet;">Nombre</span>
+                        <input autofocus type="text" name="nombre" class="CajasL" placeholder="Nombre Completo">
+                    </div>
+                    <div class="grupo">
+                        <label for="Campo" class="text">Comentario</label>
+                        <br><textarea name="mensaje" id="Campo" rows="5" cols="40" style="width: 100%;"></textarea>
+                    </div>
+                    <div class="grupo">
+                        <p>Selecciona turno</p>
+                        <div class="contenedor-opciones">
+                            <div class="opcion-inline">
+                                <input type="radio" name="turno" id="turno-mat" value="Matutino">
+                                <label for="turno-mat">Matutino</label>
+                            </div>
+                            <div class="opcion-inline">
+                                <input type="radio" name="turno" id="turno-Ves" value="Vespertino">
+                                <label for="turno-Ves">Vespertino</label>
+                            </div>
+                            <div class="opcion-inline">
+                                <input type="radio" name="turno" id="turno-Noc" value="Nocturno">
+                                <label for="turno-Noc">Nocturno</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grupo">
+                        <p class="text">Selecciona tus intereses extracurriculares:</p>
+                        <div class="contenedor-opciones">
+                            <div class="opcion-inline">
+                                <input type="checkbox" name="interes" id="deport" value="Deporte">
+                                <label for="deport">Deporte</label>
+                            </div>
+                            <div class="opcion-inline">
+                                <input type="checkbox" name="interes" id="Art" value="Arte">
+                                <label for="Art">Arte</label>
+                            </div>
+                            <div class="opcion-inline">
+                                <input type="checkbox" name="interes" id="Vol" value="Voluntariado">
+                                <label for="Vol">Voluntariado</label>
+                            </div>
+                            <div class="opcion-inline">
+                                <input type="checkbox" name="interes" id="Inf" value="Influencer">
+                                <label for="Inf">Influencer</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grupo">
+                        <div class="contenedor-opciones">
+                            <div class="opcion-inline">
+                                <label for="Fav">Selecciona tu personaje favorito</label>
+                                <br><select name="carrera" id="campo-carrera">
+                                <option value="">-- Selecciona una opcion --</option>
+                                <option value="diseno-grafico">Jx</option>
+                                <option value="pedagogia">Pomni</option>
+                                <option value="psicologia">Raghata</option>
+</select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ola ">
+                        <br><input name="Limpiar" type="reset" id="btnResetear" value="Limpiar">
+                        <br><input name="Enviar" type="submit" id="btnEnviar" value="Guardar">
+                    </div>
+                    <br><a href="Preg.html">Ya tienes cuenta? Inicia sesión</a>
+                </div>
+            </form>
+        </section>
+    </body>
+</html>
