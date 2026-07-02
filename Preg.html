@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="S4.css">
+    <title>TECDP</title>
+    </head>
+    <body>
+        <section class="textos-header">
+            <div class="wave" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"></svg></div>
+            <form action="Recibir.php" method="post" id="Formulario1" name="Contacto">
+                <div align="center" class="form">
+                    <h1>Registro</h1>
+                    <div class="grupo">
+                        <span class="Etiquetas">Correo electronico:</span>
+                        <input autofocus type="email" name="Correo" class="CajasL" placeholder="Correo electronico" id="Cor">
+                    </div>
+                    <div class="grupo">
+                        <br><br><span class="Etiquetas">Telefono:</span>
+                        <input type="tel" name="telefono" pattern="[0-9]{10}" class="CajasN" placeholder="Ingresar 10 digitos" >
+                    </div>
+                    <div class="grupo">
+                        <br><span class="Etiquetas">Password:</span>
+                        <input type="password" name="pass" class="CajasL" id="CajaPass">
+                    </div>
+                    <div class="grupo">
+                        <div class="contenedor-opciones">
+                            <div class="opcion-inline">
+                                <br><span class="Etiquetas">Edad:</span>
+                                <input type="number" name="edad" id="Eda">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grupo">
+                        <div class="contenedor-opciones">
+                            <div class="opcion-inline">
+                                <br> <label for="campo-fecha"> Fecha de Nacimiento: </label></br>
+                                <input type="date" name="fecha" id="campo-fecha">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ola ">
+                        <br><input name="Limpiar" type="reset" id="btnResetear" value="Limpiar">
+                        <br><input name="Enviar" type="submit" id="btnEnviar" value="Guardar">
+                    </div>
+                    <br><a href="Login.html">Ya tienes cuenta? Inicia sesión</a>
+                </div>
+            </form>
+        </section>
+    </body>
+</html>

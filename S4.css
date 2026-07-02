@@ -25,8 +25,8 @@ h1{
 }
 form{
     background-color: #fff;
-    padding: 40px 0;
-    box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
+    padding: 40px 40px;
+    box-shadow: 0 0 15px 0 rgba(255, 255, 255, 0.8);
     border-radius: 10px;
 }
 .form{
@@ -34,7 +34,7 @@ form{
 }
 form .grupo{
     position: relative;
-    margin: 45px;
+    margin: 25px;
 }
 .CajasL{
     background: none;
@@ -58,7 +58,7 @@ form .grupo{
 }
 input:focus{
     outline: none;
-    color: #5e5b5d;
+    color: #30033d;
 }
 input{
     font-family: 'roboto';
@@ -69,7 +69,7 @@ input{
     display: block;
     width: 80%;
     margin: 10px auto;
-    color: #fff;
+    color: #ffffff;
     height: 40px;
     font-size: 16px;
 }
