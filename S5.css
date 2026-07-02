@@ -9,8 +9,8 @@
 body{
     font-family: 'open sans';
     background: #4568DC;
-    background: -webkit-linear-gradient(to right, hsla(298, 32%, 56%, 0.589), hsla(226, 68%, 57%, 0.582)), url(../TADC/T2.jpg);  
-    background: linear-gradient(to right, hsla(298, 32%, 56%, 0.589), hsla(226, 68%, 57%, 0.582)), url(../TADC/T2.jpg);
+    background: -webkit-linear-gradient(to right, hsla(298, 32%, 56%, 0.589), hsla(226, 68%, 57%, 0.582)), url(../Actividades-Web/T2.jpg);  
+    background: linear-gradient(to right, hsla(298, 32%, 56%, 0.589), hsla(226, 68%, 57%, 0.582)), url(../Actividades-Web/T2.jpg);
     min-height: 100vh;
     padding: 40px 0;
     display: flex;
