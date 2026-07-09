@@ -39,8 +39,8 @@ body {
     text-align: center;
     overflow: hidden;
     position: relative;
-    background: -webkit-linear-gradient(to right, hsla(207, 72%, 76%, 0.753), hsla(278, 77%, 68%, 0.719)), url(..//TADC/T1.jpg);
-    background: linear-gradient(to right, hsla(0, 0%, 0%, 0.925), hsla(0, 96%, 10%, 0.671)), url(..//TADC/T1.jpg); 
+    background: -webkit-linear-gradient(to right, hsla(207, 72%, 76%, 0.753), hsla(278, 77%, 68%, 0.719)), url(..//Actividades-Web/T1.jpg);
+    background: linear-gradient(to right, hsla(0, 0%, 0%, 0.925), hsla(0, 96%, 10%, 0.671)), url(..//Actividades-Web/T1.jpg); 
     background-size: cover;
     background-attachment: fixed;
 }
