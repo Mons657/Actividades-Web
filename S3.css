@@ -39,8 +39,8 @@ body {
     text-align: center;
     overflow: hidden;
     position: relative;
-    background: -webkit-linear-gradient(to right, hsla(207, 72%, 76%, 0.753), hsla(278, 77%, 68%, 0.719)), url(..//Actividades-Web/T1.jpg);
-    background: linear-gradient(to right, hsla(0, 0%, 0%, 0.925), hsla(0, 96%, 10%, 0.671)), url(..//Actividades-Web/T1.jpg); 
+    background: -webkit-linear-gradient(to right, hsla(207, 72%, 76%, 0.753), hsla(278, 77%, 68%, 0.719)), url(..//TADC/T1.jpg);
+    background: linear-gradient(to right, hsla(0, 0%, 0%, 0.925), hsla(0, 96%, 10%, 0.671)), url(..//TADC/T1.jpg); 
     background-size: cover;
     background-attachment: fixed;
 }
@@ -127,38 +127,93 @@ body {
     z-index: 1;
 }
 
+/* =======================================================
+    ESTILOS EXCLUSIVOS PARA DISPOSITIVOS MÓVILES (CELULARES)
+   ======================================================= */
 @media screen and (max-width: 768px) {
     
-    /* Ajustamos el tamaño del carrusel para que no corte las imágenes */
+    /* 1. Quitamos la altura forzada del banner y dejamos que respire */
+    .banner {
+        height: auto;
+        min-height: 100vh;
+        padding: 40px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        overflow-y: auto; /* Permite hacer scroll hacia abajo */
+    }
+
+    /* 2. REESTRUCTURACIÓN DEL SLIDER: Rompemos el círculo 3D caótico */
     .banner .slider {
-        width: 140px;  /* Reducimos el ancho del carrusel */
-        height: 200px; /* Reducimos el alto del carrusel */
-        top: 25%;      /* Lo subimos un poco para dar espacio al texto */
-    }
-
-    /* ¡IMPORTANTE! Reducimos el radio 3D para pantallas pequeñas */
-    .banner .slider .item {
-        transform: 
-        rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
-        translateZ(250px); /* Cambiado de 550px a 250px para cerrar el círculo 3D */
-    }
-
-    /* Ajustamos los textos del Autor */
-    .banner .content .autor {
+        position: relative;
         width: 100%;
-        margin-top: 10px;
+        height: auto;
+        top: 0;
+        left: 0;
+        transform: none !important; /* Desactiva la animación de rotación automática */
+        animation: none !important;
+        
+        /* Convertimos el carrusel en una hermosa rejilla de 2 columnas */
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 15px;
+        padding: 20px 0;
+        margin-top: 20px;
+        order: 2; /* Manda las imágenes abajo del título */
+    }
+
+    /* 3. Quitamos el posicionamiento absoluto de las imágenes */
+    .banner .slider .item {
+        position: relative;
+        width: 100%;
+        height: 180px; /* Altura ideal fija para cada tarjeta */
+        transform: none !important; /* Adiós al translateZ que las encimaba */
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(149, 0, 255, 0.3); /* Brillo morado en los bordes */
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* 4. Acomodamos el título de TADC arriba de las imágenes */
+    .banner .content {
+        position: relative;
+        bottom: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        margin-bottom: 20px;
+        order: 1; /* Pone los textos al principio del todo */
+    }
+
+    .banner .content h1 {
+        font-size: 16vw; /* Título grande pero legible */
+        position: relative;
+        margin-bottom: 10px;
+    }
+
+    .banner .content .autor {
+        margin-top: 5px;
     }
 
     .banner .content .autor h2 {
-        font-size: 24px; /* Nombre de Gooseworx más compacto */
+        font-size: 26px;
     }
 
-    /* El botón se acomoda centrado abajo en pantallas muy chiquitas */
-    @media screen and (max-width: 480px) {
-        .button {
-            bottom: 15px;
-            right: 50%;
-            transform: translateX(50%); /* Centra el botón horizontalmente */
-        }
+    /* 5. El botón de introducción fijo abajo de forma elegante */
+    .button {
+        position: relative;
+        bottom: 0;
+        right: 0;
+        margin-top: 30px;
+        order: 3; /* El botón se queda al último de la página */
+        width: 80%;
+        justify-content: center;
+    }
+    
+    .button span {
+        width: 100%;
+        text-align: center;
+        padding: 14px 20px;
     }
 }
