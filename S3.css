@@ -128,92 +128,90 @@ body {
 }
 
 /* =======================================================
-    ESTILOS EXCLUSIVOS PARA DISPOSITIVOS MÓVILES (CELULARES)
+   ESTILOS EXCLUSIVOS PARA DISPOSITIVOS MÓVILES (CELULARES)
    ======================================================= */
 @media screen and (max-width: 768px) {
     
-    /* 1. Quitamos la altura forzada del banner y dejamos que respire */
+    /* 1. Ajustamos el contenedor principal para dar espacio */
     .banner {
-        height: auto;
-        min-height: 100vh;
-        padding: 40px 20px;
+        height: 100vh;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
+        justify-content: space-between; /* Separa el texto arriba y el slider abajo */
         align-items: center;
-        overflow-y: auto; /* Permite hacer scroll hacia abajo */
+        padding: 40px 10px 20px 10px;
     }
 
-    /* 2. REESTRUCTURACIÓN DEL SLIDER: Rompemos el círculo 3D caótico */
-    .banner .slider {
-        position: relative;
-        width: 100%;
-        height: auto;
-        top: 0;
-        left: 0;
-        transform: none !important; /* Desactiva la animación de rotación automática */
-        animation: none !important;
-        
-        /* Convertimos el carrusel en una hermosa rejilla de 2 columnas */
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 15px;
-        padding: 20px 0;
-        margin-top: 20px;
-        order: 2; /* Manda las imágenes abajo del título */
-    }
-
-    /* 3. Quitamos el posicionamiento absoluto de las imágenes */
-    .banner .slider .item {
-        position: relative;
-        width: 100%;
-        height: 180px; /* Altura ideal fija para cada tarjeta */
-        transform: none !important; /* Adiós al translateZ que las encimaba */
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 4px 15px rgba(149, 0, 255, 0.3); /* Brillo morado en los bordes */
-        border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    /* 4. Acomodamos el título de TADC arriba de las imágenes */
+    /* 2. El bloque de contenidos (Títulos) se queda limpio ARRIBA */
     .banner .content {
         position: relative;
-        bottom: 0;
-        left: 0;
+        bottom: auto;
+        left: auto;
         transform: none;
         width: 100%;
-        margin-bottom: 20px;
-        order: 1; /* Pone los textos al principio del todo */
+        padding-bottom: 0;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
+    /* Reducimos el tamaño de la tipografía gigante para que quepa en el ancho del celular */
     .banner .content h1 {
-        font-size: 16vw; /* Título grande pero legible */
+        font-size: 5rem !important; /* Forzamos un tamaño armónico para móvil */
         position: relative;
-        margin-bottom: 10px;
+        text-align: center;
+        line-height: 1.1em;
     }
 
     .banner .content .autor {
-        margin-top: 5px;
+        margin-top: 10px;
+        text-align: center;
     }
 
     .banner .content .autor h2 {
-        font-size: 26px;
+        font-size: 1.8rem;
     }
 
-    /* 5. El botón de introducción fijo abajo de forma elegante */
+    /* 3. El Slider se conserva en 3D pero se encoge y se va ABAJO */
+    .banner .slider {
+        position: absolute;
+        width: 110px;     /* Reducimos drásticamente el ancho del marco */
+        height: 150px;    /* Reducimos el alto del marco */
+        top: 60%;         /* Lo bajamos a la mitad inferior de la pantalla */
+        left: calc(50% - 55px); /* Lo centra perfectamente en el eje horizontal */
+    }
+
+    /* Ajustamos el radio del círculo 3D para celulares */
+    .banner .slider .item {
+        position: absolute;
+        inset: 0;
+        transform: 
+            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+            translateZ(180px) !important; /* Cerrado a 180px para que no se salga de la pantalla */
+    }
+
+    /* Forzamos a que las imágenes respeten el tamaño mini de su contenedor */
+    .banner .slider .item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(149, 0, 255, 0.4);
+    }
+
+    /* 4. El botón se coloca abajo del todo de forma estilizada */
     .button {
-        position: relative;
-        bottom: 0;
-        right: 0;
-        margin-top: 30px;
-        order: 3; /* El botón se queda al último de la página */
-        width: 80%;
-        justify-content: center;
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
+        z-index: 100;
+        font-size: 14px;
     }
     
     .button span {
-        width: 100%;
-        text-align: center;
-        padding: 14px 20px;
+        padding: 12px 20px;
     }
 }
