@@ -8,15 +8,17 @@ body {
     background-image: linear-gradient(150deg, #9500ff, rgb(3, 20, 31), #ff0000);
     border-radius: 8px;
     color: azure;
-    display: inline-flex; /* El botón solo mide lo que mide su contenido */
-    font-size: 18px;
+    display: inline-flex;
+    font-size: 16px; /* Bajado ligeramente para móviles */
     padding: 4px;
     cursor: pointer;
     transition: .3s;
-    margin-top: 42%;
-    margin-left: 80%;
-    position: relative; /* Le da superpoderes de posicionamiento */
-    z-index: 10;
+    
+    /* CAMBIOS DE POSICIÓN AQUÍ */
+    position: absolute; 
+    bottom: 30px;
+    right: 30px;
+    z-index: 20; /* Prioridad máxima de clic */
 }
 .button span{
     background-color: black;
@@ -37,8 +39,8 @@ body {
     text-align: center;
     overflow: hidden;
     position: relative;
-    background: -webkit-linear-gradient(to right, hsla(207, 72%, 76%, 0.753), hsla(278, 77%, 68%, 0.719)), url(..//Actividades-Web/T1.jpg);
-    background: linear-gradient(to right, hsla(0, 0%, 0%, 0.925), hsla(0, 96%, 10%, 0.671)), url(..//Actividades-Web/T1.jpg); 
+    background: -webkit-linear-gradient(to right, hsla(207, 72%, 76%, 0.753), hsla(278, 77%, 68%, 0.719)), url(..//TADC/T1.jpg);
+    background: linear-gradient(to right, hsla(0, 0%, 0%, 0.925), hsla(0, 96%, 10%, 0.671)), url(..//TADC/T1.jpg); 
     background-size: cover;
     background-attachment: fixed;
 }
@@ -73,26 +75,26 @@ body {
     object-fit: cover;
 }
 /*Otro pedo*/
-.banner .content{
+.banner .content {
     position: absolute;
-    bottom: 50;
+    bottom: 50px;
     left: 50%;
     transform: translateX(-50%);
-    width: min(1400px, 100vw);
+    width: 90vw; /* Usa porcentaje del ancho de pantalla */
     height: max-content;
-    padding-bottom: 150px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     z-index: 1;
+    text-align: center;
 }
-.banner .content h1{
+.banner .content h1 {
     font-family: 'ICA Rubrik';
-    font-size: 16em;
+    font-size: 10vw; /* Cambiado de 16em a 10vw para adaptarse proporcionalmente */
     line-height: 1em;
     color: rgb(255, 251, 0);
-    position: absolute;
+    position: relative; /* Cambiado de absolute a relative para no encimarse en móviles */
 }
 .banner .content h1::after{
     position: relative;
@@ -123,4 +125,40 @@ body {
     background-repeat: no-repeat;
     background-position: top center;
     z-index: 1;
+}
+
+@media screen and (max-width: 768px) {
+    
+    /* Ajustamos el tamaño del carrusel para que no corte las imágenes */
+    .banner .slider {
+        width: 140px;  /* Reducimos el ancho del carrusel */
+        height: 200px; /* Reducimos el alto del carrusel */
+        top: 25%;      /* Lo subimos un poco para dar espacio al texto */
+    }
+
+    /* ¡IMPORTANTE! Reducimos el radio 3D para pantallas pequeñas */
+    .banner .slider .item {
+        transform: 
+        rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+        translateZ(250px); /* Cambiado de 550px a 250px para cerrar el círculo 3D */
+    }
+
+    /* Ajustamos los textos del Autor */
+    .banner .content .autor {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .banner .content .autor h2 {
+        font-size: 24px; /* Nombre de Gooseworx más compacto */
+    }
+
+    /* El botón se acomoda centrado abajo en pantallas muy chiquitas */
+    @media screen and (max-width: 480px) {
+        .button {
+            bottom: 15px;
+            right: 50%;
+            transform: translateX(50%); /* Centra el botón horizontalmente */
+        }
+    }
 }
